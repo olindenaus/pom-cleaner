@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5358bed1-d1d0-4add-8416-a630c98f1066" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lindenau/control/PomFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lindenau/control/PomReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lindenau/entity/Dependency.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lindenau/entity/Dependency.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lindenau/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lindenau/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lindenau/entity/Pom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lindenau/entity/Pom.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,8 +17,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -58,7 +60,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.PomTest.shouldFailCreatingPomEntity">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.lindenau.Main" />
       <module name="pom-cleaner" />
@@ -122,10 +124,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.PomTest.shouldFailCreatingPomEntity" />
         <item itemvalue="JUnit.PomTest" />
         <item itemvalue="JUnit.PomLoaderTest.shouldGetTwoPomFiles" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -143,7 +145,7 @@
       <workItem from="1583603586318" duration="713000" />
       <workItem from="1583736385672" duration="2402000" />
       <workItem from="1583751316889" duration="4707000" />
-      <workItem from="1583758775466" duration="2981000" />
+      <workItem from="1583758775466" duration="5848000" />
     </task>
     <servers />
   </component>
@@ -165,14 +167,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/lindenau/control/PomLoader.java</url>
-          <line>25</line>
-          <properties>
-            <option name="lambda-ordinal" value="-1" />
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/lindenau/control/PomLoaderTest.java</url>
           <line>30</line>
           <option name="timeStamp" value="4" />
@@ -181,6 +175,11 @@
           <url>file://$PROJECT_DIR$/src/test/java/com/lindenau/control/PomLoaderTest.java</url>
           <line>20</line>
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/lindenau/Main.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

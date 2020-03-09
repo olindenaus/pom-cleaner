@@ -1,6 +1,6 @@
 package com.lindenau.entity;
 
-import java.io.ObjectInputStream;
+import java.util.List;
 import java.util.Objects;
 
 public class Pom {
@@ -9,6 +9,8 @@ public class Pom {
     private String groupId;
     private boolean hasParent;
     private String parentArtifactId;
+    private List<String> lines;
+    private String filePath;
 
     public String getArtifactId() {
         return artifactId;
@@ -31,6 +33,8 @@ public class Pom {
         this.groupId = Objects.requireNonNull(pb.groupId);
         this.hasParent = !pb.parentArtifactId.isEmpty();
         this.parentArtifactId = pb.parentArtifactId;
+        this.filePath = Objects.requireNonNull(pb.filePath);
+        this.lines = Objects.requireNonNull(pb.lines);
     }
 
     public static PomBuilder builder() {
@@ -41,6 +45,8 @@ public class Pom {
         private String artifactId;
         private String groupId;
         private String parentArtifactId = "";
+        private List<String> lines;
+        private String filePath;
 
         private PomBuilder() {
         }
@@ -57,6 +63,16 @@ public class Pom {
 
         public PomBuilder withParentArtifactId(String parentArtifactId) {
             this.parentArtifactId = parentArtifactId;
+            return this;
+        }
+
+        public PomBuilder withLines(List<String> lines) {
+            this.lines = lines;
+            return this;
+        }
+
+        public PomBuilder withFilePath(String path) {
+            this.filePath = path;
             return this;
         }
 
