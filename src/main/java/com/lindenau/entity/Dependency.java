@@ -1,5 +1,7 @@
 package com.lindenau.entity;
 
+import java.util.Objects;
+
 public class Dependency {
     private String artifactId;
     private String groupId;
@@ -23,9 +25,9 @@ public class Dependency {
     }
 
     public Dependency(DependencyBuilder db) {
-        this.artifactId = db.artifactId;
-        this.groupId = db.groupId;
-        this.version = db.version;
+        this.artifactId = Objects.requireNonNull(db.artifactId);
+        this.groupId = Objects.requireNonNull(db.groupId);
+        this.version = Objects.requireNonNull(db.version);
         this.special = db.special;
     }
 
