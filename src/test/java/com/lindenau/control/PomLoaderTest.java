@@ -19,11 +19,7 @@ class PomLoaderTest {
         PomLoader pomLoader = new PomLoader("testproject");
         File[] files = pomLoader.getAllPoms();
         assertEquals(2, files.length);
-        try {
-            FileUtils.deleteDirectory(new File("testproject"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        clean();
     }
 
     private void createDirectoryWithPoms() {
@@ -37,6 +33,14 @@ class PomLoaderTest {
             writer.println("sth");
         } catch (FileNotFoundException | UnsupportedEncodingException e) {
             System.out.println("could not create " + directory + "/pom.xml");
+            e.printStackTrace();
+        }
+    }
+
+    private void clean() {
+        try {
+            FileUtils.deleteDirectory(new File("testproject"));
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
