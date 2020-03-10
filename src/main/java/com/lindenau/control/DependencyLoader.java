@@ -13,14 +13,39 @@ import java.util.stream.Collectors;
 
 public class DependencyLoader {
 
-    private Map<String, Dependency> dependencies = new HashMap<>();
     private List<String> NON_SPECIAL = Arrays.asList("<groupId>", "<artifactId>", "<version>");
     private boolean started = false;
     private XmlReader xmlReader = new XmlReader();
 
-    public Map<String, Dependency> loadPomDependencies(Pom pom) {
-        List<String> lines = pom.getLines();
+    public Map<String, Dependency> loadDependencyManagement(Pom pom) {
         List<String> dependencyLines = new ArrayList<>();
+        started = false;
+        for (String line : pom.getLines()) {
+            String entry = line.trim();
+            if (started) {
+                dependencyLines.add(entry);
+            }
+            if (entry.startsWith("<dependencyManagement>")) {
+                started = true;
+            } else if (entry.startsWith("</dependencyManagement>")) {
+                started = false;
+                break;
+            }
+        }
+        if (dependencyLines.isEmpty()) {
+            throw new RuntimeException("No <dependencyManagement> section found in specified pom: " + pom.getFilePath());
+        }
+        return loadDependencies(dependencyLines);
+    }
+
+    public Map<String, Dependency> loadPomDependencies(Pom pom) {
+        return loadDependencies(pom.getLines());
+    }
+
+    private Map<String, Dependency> loadDependencies(List<String> lines) {
+        List<String> dependencyLines = new ArrayList<>();
+        Map<String, Dependency> dependencies = new HashMap<>();
+        started = false;
         for (String line : lines) {
             String entry = line.trim();
             if (entry.startsWith("<dependency>")) {
@@ -31,7 +56,6 @@ public class DependencyLoader {
                 Dependency dependency = buildDependency(dependencyLines);
                 dependencies.put(dependency.getArtifactId(), dependency);
                 started = false;
-                continue;
             }
             if (started) {
                 dependencyLines.add(entry);

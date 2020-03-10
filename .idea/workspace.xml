@@ -2,18 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5358bed1-d1d0-4add-8416-a630c98f1066" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lindenau/control/DependencyCollector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lindenau/xml/XmlReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/lindenau/control/DependencyCollectorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/lindenau/xml/XmlReaderTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lindenau/control/DependencyComparer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lindenau/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lindenau/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lindenau/control/DependencyCollector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lindenau/control/DependencyCollector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lindenau/control/DependencyLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lindenau/control/DependencyLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lindenau/control/PomReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lindenau/control/PomReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lindenau/entity/Dependency.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lindenau/entity/Dependency.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lindenau/entity/Pom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lindenau/entity/Pom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/lindenau/control/DependencyComparerTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/lindenau/control/DependencyLoaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/lindenau/control/DependencyLoaderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/lindenau/entity/PomTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/lindenau/entity/PomTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +62,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.DependencyCollectorTest.shouldGetChildrenDependenciesMap">
+  <component name="RunManager" selected="JUnit.DependencyLoaderTest.shouldFailWhenNoDependencyManagementSection">
     <configuration name="DependencyCollectorTest.shouldGetChildrenDependenciesMap" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pom-cleaner" />
       <extension name="coverage">
@@ -101,7 +95,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DependencyLoaderTest.shouldLoadPomDependencies" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DependencyLoaderTest.shouldFailWhenNoDependencyManagementSection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pom-cleaner" />
       <extension name="coverage">
         <pattern>
@@ -111,57 +105,58 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.lindenau.control" />
       <option name="MAIN_CLASS_NAME" value="com.lindenau.control.DependencyLoaderTest" />
-      <option name="METHOD_NAME" value="shouldLoadPomDependencies" />
+      <option name="METHOD_NAME" value="shouldFailWhenNoDependencyManagementSection" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="XmlReaderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DependencyLoaderTest.shouldLoadParentDependenciesFromDependencyManagement" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pom-cleaner" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.lindenau.xml.*" />
+          <option name="PATTERN" value="com.lindenau.control.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.lindenau.xml" />
-      <option name="MAIN_CLASS_NAME" value="com.lindenau.xml.XmlReaderTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="com.lindenau.control" />
+      <option name="MAIN_CLASS_NAME" value="com.lindenau.control.DependencyLoaderTest" />
+      <option name="METHOD_NAME" value="shouldLoadParentDependenciesFromDependencyManagement" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="XmlReaderTest.shouldThrowExceptionWhenNoAttributeFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PomTest.shouldCreatePomEntity" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pom-cleaner" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.lindenau.xml.*" />
+          <option name="PATTERN" value="com.lindenau.entity.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.lindenau.xml" />
-      <option name="MAIN_CLASS_NAME" value="com.lindenau.xml.XmlReaderTest" />
-      <option name="METHOD_NAME" value="shouldThrowExceptionWhenNoAttributeFound" />
+      <option name="PACKAGE_NAME" value="com.lindenau.entity" />
+      <option name="MAIN_CLASS_NAME" value="com.lindenau.entity.PomTest" />
+      <option name="METHOD_NAME" value="shouldCreatePomEntity" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.DependencyLoaderTest.shouldLoadPomDependencies" />
-      <item itemvalue="JUnit.XmlReaderTest.shouldThrowExceptionWhenNoAttributeFound" />
-      <item itemvalue="JUnit.XmlReaderTest" />
       <item itemvalue="JUnit.DependencyLoaderTest.shouldAddSpecialPart" />
       <item itemvalue="JUnit.DependencyCollectorTest.shouldGetChildrenDependenciesMap" />
+      <item itemvalue="JUnit.PomTest.shouldCreatePomEntity" />
+      <item itemvalue="JUnit.DependencyLoaderTest.shouldLoadParentDependenciesFromDependencyManagement" />
+      <item itemvalue="JUnit.DependencyLoaderTest.shouldFailWhenNoDependencyManagementSection" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DependencyLoaderTest.shouldFailWhenNoDependencyManagementSection" />
+        <item itemvalue="JUnit.DependencyLoaderTest.shouldLoadParentDependenciesFromDependencyManagement" />
+        <item itemvalue="JUnit.PomTest.shouldCreatePomEntity" />
         <item itemvalue="JUnit.DependencyCollectorTest.shouldGetChildrenDependenciesMap" />
         <item itemvalue="JUnit.DependencyLoaderTest.shouldAddSpecialPart" />
-        <item itemvalue="JUnit.DependencyLoaderTest.shouldLoadPomDependencies" />
-        <item itemvalue="JUnit.XmlReaderTest" />
-        <item itemvalue="JUnit.XmlReaderTest.shouldThrowExceptionWhenNoAttributeFound" />
       </list>
     </recent_temporary>
   </component>
@@ -183,7 +178,7 @@
       <workItem from="1583736385672" duration="2402000" />
       <workItem from="1583751316889" duration="4707000" />
       <workItem from="1583758775466" duration="9151000" />
-      <workItem from="1583856690609" duration="5338000" />
+      <workItem from="1583856690609" duration="7885000" />
     </task>
     <servers />
   </component>
@@ -218,18 +213,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/lindenau/Main.java</url>
-          <line>21</line>
+          <line>26</line>
           <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/lindenau/control/DependencyLoader.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/lindenau/control/DependencyLoader.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

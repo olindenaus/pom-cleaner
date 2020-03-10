@@ -5,7 +5,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import static org.junit.jupiter.api.Assertions.*;
+import java.util.Collections;
 
 public class PomTest {
 
@@ -14,6 +14,8 @@ public class PomTest {
         Pom pom = Pom.builder()
                 .withArtifactId("artifact-id")
                 .withGroupId("groupId")
+                .withFilePath("")
+                .withLines(Collections.emptyList())
                 .build();
         Assert.assertEquals("groupId", pom.getGroupId());
     }

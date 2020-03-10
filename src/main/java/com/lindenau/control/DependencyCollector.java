@@ -6,6 +6,7 @@ import com.lindenau.entity.Pom;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class DependencyCollector {
 
@@ -18,6 +19,13 @@ public class DependencyCollector {
                 .map(pom -> dependencyLoader.loadPomDependencies(pom))
                 .forEach(dependencies::putAll);
         return dependencies;
+    }
+
+    public Map<String, Dependency> getParentDependencies(List<Pom> poms) {
+        return poms.stream()
+                .filter(pom -> pom.getParentArtifactId().isEmpty())
+                .map(parentPom -> dependencyLoader.loadDependencyManagement(parentPom))
+                .findFirst().get();
     }
 
 }
