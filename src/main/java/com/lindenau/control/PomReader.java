@@ -1,6 +1,7 @@
 package com.lindenau.control;
 
 import com.lindenau.entity.Pom;
+import com.lindenau.xml.XmlReader;
 
 import java.io.File;
 import java.io.IOException;
@@ -14,22 +15,8 @@ import java.util.regex.Pattern;
 
 public class PomReader {
 
-    Pattern parentPattern = Pattern.compile(".*<parent>(.*)</parent>.*", Pattern.DOTALL);
-
-    private String getAttribute(List<String> lines, String attributeName) {
-        String attribute = "<" + attributeName + ">";
-        for (String line : lines) {
-            String processLine = line.trim();
-            if (processLine.startsWith(attribute)) {
-                Pattern attributePattern = Pattern.compile(attribute + "(.*)" + "</" + attributeName + ">");
-                Matcher matcher = attributePattern.matcher(processLine);
-                if (matcher.matches()) {
-                    return matcher.group(1);
-                }
-            }
-        }
-        throw new RuntimeException("no " + attribute + " section in pom");
-    }
+    private Pattern parentPattern = Pattern.compile(".*<parent>(.*)</parent>.*", Pattern.DOTALL);
+    private XmlReader xmlReader = new XmlReader();
 
     public Pom readPomFile(File file) {
         System.out.println("Reading pom: " + file.getName());
@@ -49,11 +36,11 @@ public class PomReader {
     }
 
     private String getArtifactId(List<String> lines) {
-        return getAttribute(lines, "artifactId");
+        return xmlReader.getAttribute(lines, "artifactId");
     }
 
     private String getGroupId(List<String> lines) {
-        return getAttribute(lines, "groupId");
+        return xmlReader.getAttribute(lines, "groupId");
     }
 
     private String getParentArtifactId(List<String> lines) {
@@ -61,7 +48,7 @@ public class PomReader {
         Matcher matcher = parentPattern.matcher(pomContent);
         if (matcher.matches()) {
             String parentSection = matcher.group(1);
-            return getAttribute(Arrays.asList(parentSection.split("\n")), "artifactId");
+            return xmlReader.getAttribute(Arrays.asList(parentSection.split("\n")), "artifactId");
         }
         return "";
     }

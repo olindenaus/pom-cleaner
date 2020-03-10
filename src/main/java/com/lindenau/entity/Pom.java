@@ -28,6 +28,14 @@ public class Pom {
         return parentArtifactId;
     }
 
+    public String getFilePath() {
+        return filePath;
+    }
+
+    public List<String> getLines() {
+        return lines;
+    }
+
     private Pom(PomBuilder pb) {
         this.artifactId = Objects.requireNonNull(pb.artifactId);
         this.groupId = Objects.requireNonNull(pb.groupId);

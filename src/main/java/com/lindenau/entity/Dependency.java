@@ -31,6 +31,10 @@ public class Dependency {
         this.special = db.special;
     }
 
+    public static DependencyBuilder builder() {
+        return new DependencyBuilder();
+    }
+
     public static class DependencyBuilder {
         private String artifactId;
         private String groupId;
