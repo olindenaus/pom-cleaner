@@ -2,7 +2,7 @@ package com.lindenau.entity;
 
 import java.util.Objects;
 
-public class Dependency {
+public class Dependency implements Comparable {
     private String artifactId;
     private String groupId;
     private String version;
@@ -33,6 +33,25 @@ public class Dependency {
 
     public static DependencyBuilder builder() {
         return new DependencyBuilder();
+    }
+
+    @Override
+    public String toString() {
+        return "<dependency>\n" +
+                "<artifactId>" + artifactId + "</artifactId>\n" +
+                "<groupId>" + groupId + "</groupId>\n" +
+                "<version>" + version + "</version>\n" +
+                getSpecialPart() +
+                "</dependency>\n";
+    }
+
+    public String getSpecialPart() {
+        return special.isEmpty() ? "" : special + "\n";
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        return this.getArtifactId().compareTo(((Dependency) o).getArtifactId());
     }
 
     public static class DependencyBuilder {

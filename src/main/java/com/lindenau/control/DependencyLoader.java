@@ -22,14 +22,15 @@ public class DependencyLoader {
         started = false;
         for (String line : pom.getLines()) {
             String entry = line.trim();
-            if (started) {
-                dependencyLines.add(entry);
-            }
             if (entry.startsWith("<dependencyManagement>")) {
                 started = true;
+                continue;
             } else if (entry.startsWith("</dependencyManagement>")) {
                 started = false;
                 break;
+            }
+            if (started) {
+                dependencyLines.add(entry);
             }
         }
         if (dependencyLines.isEmpty()) {
