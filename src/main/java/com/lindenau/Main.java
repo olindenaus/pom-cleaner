@@ -1,10 +1,13 @@
 package com.lindenau;
 
 import com.lindenau.control.DependencyCollector;
+import com.lindenau.control.PomCleaner;
 import com.lindenau.control.PomFactory;
 import com.lindenau.control.PomLoader;
+import com.lindenau.control.PropertyReader;
 import com.lindenau.entity.Dependency;
 import com.lindenau.entity.Pom;
+import com.lindenau.entity.Property;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -16,6 +19,8 @@ public class Main {
 
     private static PomFactory pomFactory = new PomFactory();
     private static DependencyCollector dependencyCollector = new DependencyCollector();
+    private static PomCleaner pomCleaner = new PomCleaner();
+    private static PropertyReader propertyReader = new PropertyReader();
 
     public static void main(String[] args) {
         if (args.length == 0 || args[0].isEmpty()) {
@@ -32,9 +37,12 @@ public class Main {
                 .filter(dep -> childrenDependencies.containsKey(dep.getArtifactId()))
                 .sorted()
                 .collect(Collectors.toList());
-        for(Dependency dep : sortedDependencies) {
-            System.out.println(dep);
-        }
+
+        Pom parentPom = poms.values().stream()
+                .filter(pom -> !pom.isHasParent())
+                .findFirst().get();
+        List<Property> properties = propertyReader.readAllProperties(parentPom);
+        String cleanedPom = pomCleaner.cleanPom(parentPom, sortedDependencies, properties);
 
         System.out.println("Finished cleaning pom files");
     }

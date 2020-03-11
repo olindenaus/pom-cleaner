@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5358bed1-d1d0-4add-8416-a630c98f1066" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lindenau/control/PomCleaner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lindenau/control/PropertyReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lindenau/entity/Property.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/lindenau/control/PropertyReaderTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lindenau/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lindenau/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lindenau/control/DependencyLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lindenau/control/DependencyLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lindenau/entity/Dependency.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lindenau/entity/Dependency.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lindenau/control/DependencyCollector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lindenau/control/DependencyCollector.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,8 +41,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="com.lindenau.xml" />
       <recent name="com.lindenau.control" />
+      <recent name="com.lindenau.xml" />
       <recent name="com.lindenau.entity" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -72,22 +75,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DependencyCollectorTest.shouldGetChildrenDependenciesMap" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="pom-cleaner" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.lindenau.control.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.lindenau.control" />
-      <option name="MAIN_CLASS_NAME" value="com.lindenau.control.DependencyCollectorTest" />
-      <option name="METHOD_NAME" value="shouldGetChildrenDependenciesMap" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -140,20 +127,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PropertyReaderTest.shouldGetPropertiesFromPom" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pom-cleaner" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lindenau.control.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.lindenau.control" />
+      <option name="MAIN_CLASS_NAME" value="com.lindenau.control.PropertyReaderTest" />
+      <option name="METHOD_NAME" value="shouldGetPropertiesFromPom" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.DependencyCollectorTest.shouldGetChildrenDependenciesMap" />
       <item itemvalue="JUnit.PomTest.shouldCreatePomEntity" />
       <item itemvalue="JUnit.DependencyLoaderTest.shouldLoadParentDependenciesFromDependencyManagement" />
       <item itemvalue="JUnit.DependencyLoaderTest.shouldFailWhenNoDependencyManagementSection" />
+      <item itemvalue="JUnit.PropertyReaderTest.shouldGetPropertiesFromPom" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.PropertyReaderTest.shouldGetPropertiesFromPom" />
         <item itemvalue="JUnit.DependencyLoaderTest.shouldFailWhenNoDependencyManagementSection" />
         <item itemvalue="JUnit.DependencyLoaderTest.shouldLoadParentDependenciesFromDependencyManagement" />
         <item itemvalue="JUnit.PomTest.shouldCreatePomEntity" />
-        <item itemvalue="JUnit.DependencyCollectorTest.shouldGetChildrenDependenciesMap" />
       </list>
     </recent_temporary>
   </component>
@@ -175,7 +178,8 @@
       <workItem from="1583736385672" duration="2402000" />
       <workItem from="1583751316889" duration="4707000" />
       <workItem from="1583758775466" duration="9151000" />
-      <workItem from="1583856690609" duration="12749000" />
+      <workItem from="1583856690609" duration="12835000" />
+      <workItem from="1583953182012" duration="4812000" />
     </task>
     <servers />
   </component>
@@ -210,8 +214,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/lindenau/Main.java</url>
-          <line>38</line>
+          <line>46</line>
           <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/lindenau/control/PomCleaner.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
