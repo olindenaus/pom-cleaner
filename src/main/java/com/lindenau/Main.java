@@ -31,19 +31,27 @@ public class Main {
         PomLoader pomLoader = new PomLoader(directory);
         File[] pomFiles = pomLoader.getAllPoms();
         Map<String, Pom> poms = pomFactory.mapToPoms(pomFiles);
+
+        List<Dependency> sortedDependencies = sortAndFilterParentDependencies(poms);
+        Pom parentPom = getParent(poms);
+
+        List<Property> properties = propertyReader.readAllProperties(parentPom);
+        String cleanedPom = pomCleaner.cleanPom(parentPom, sortedDependencies, properties);
+        System.out.println("Finished cleaning pom files");
+    }
+
+    private static List<Dependency> sortAndFilterParentDependencies(Map<String, Pom> poms) {
         Map<String, Dependency> childrenDependencies = dependencyCollector.getChildrenDependencies(new ArrayList<>(poms.values()));
         Map<String, Dependency> parentDependencies = dependencyCollector.getParentDependencies(new ArrayList<>(poms.values()));
-        List<Dependency> sortedDependencies = parentDependencies.values().stream()
+        return parentDependencies.values().stream()
                 .filter(dep -> childrenDependencies.containsKey(dep.getArtifactId()))
                 .sorted()
                 .collect(Collectors.toList());
+    }
 
-        Pom parentPom = poms.values().stream()
+    private static Pom getParent(Map<String, Pom> poms) {
+        return poms.values().stream()
                 .filter(pom -> !pom.isHasParent())
                 .findFirst().get();
-        List<Property> properties = propertyReader.readAllProperties(parentPom);
-        String cleanedPom = pomCleaner.cleanPom(parentPom, sortedDependencies, properties);
-
-        System.out.println("Finished cleaning pom files");
     }
 }

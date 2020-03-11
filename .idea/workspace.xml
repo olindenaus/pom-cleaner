@@ -179,7 +179,7 @@
       <workItem from="1583751316889" duration="4707000" />
       <workItem from="1583758775466" duration="9151000" />
       <workItem from="1583856690609" duration="12835000" />
-      <workItem from="1583953182012" duration="4812000" />
+      <workItem from="1583953182012" duration="5087000" />
     </task>
     <servers />
   </component>
@@ -221,6 +221,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/lindenau/control/PomCleaner.java</url>
           <line>29</line>
           <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/lindenau/control/PomCleaner.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
