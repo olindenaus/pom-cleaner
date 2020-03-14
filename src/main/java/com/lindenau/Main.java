@@ -4,12 +4,15 @@ import com.lindenau.control.DependencyCollector;
 import com.lindenau.control.PomCleaner;
 import com.lindenau.control.PomFactory;
 import com.lindenau.control.PomLoader;
+import com.lindenau.control.PomSaver;
 import com.lindenau.control.PropertyReader;
 import com.lindenau.entity.Dependency;
 import com.lindenau.entity.Pom;
 import com.lindenau.entity.Property;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -37,6 +40,8 @@ public class Main {
 
         List<Property> properties = propertyReader.readAllProperties(parentPom);
         String cleanedPom = pomCleaner.cleanPom(parentPom, sortedDependencies, properties);
+        PomSaver pomSaver = new PomSaver();
+        pomSaver.overWritePom(parentPom, cleanedPom);
         System.out.println("Finished cleaning pom files");
     }
 

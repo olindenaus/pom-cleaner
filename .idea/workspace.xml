@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5358bed1-d1d0-4add-8416-a630c98f1066" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lindenau/control/PomCleaner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lindenau/control/PropertyReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lindenau/entity/Property.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/lindenau/control/PropertyReaderTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lindenau/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lindenau/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lindenau/control/DependencyCollector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lindenau/control/DependencyCollector.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -179,7 +174,9 @@
       <workItem from="1583751316889" duration="4707000" />
       <workItem from="1583758775466" duration="9151000" />
       <workItem from="1583856690609" duration="12835000" />
-      <workItem from="1583953182012" duration="5087000" />
+      <workItem from="1583953182012" duration="5415000" />
+      <workItem from="1584168175346" duration="1199000" />
+      <workItem from="1584188386303" duration="1286000" />
     </task>
     <servers />
   </component>
@@ -214,7 +211,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/lindenau/Main.java</url>
-          <line>46</line>
+          <line>52</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
